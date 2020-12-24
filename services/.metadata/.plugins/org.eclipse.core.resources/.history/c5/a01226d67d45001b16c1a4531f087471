@@ -1,0 +1,41 @@
+package com.confirming.oportunidades.repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.MongoRegexCreator;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.MongoRegexCreator.MatchMode;
+import com.confirming.oportunidades.model.Oportunidad;
+
+public class OportunidadesRepositoryImpl implements MongoTemplateRepository{
+	
+	private final MongoTemplate mongoTemplate;
+	
+	@Autowired
+	public OportunidadesRepositoryImpl(MongoTemplate mongoTemplate) {
+		this.mongoTemplate = mongoTemplate;
+	}
+
+	
+	@Override
+	public List<Oportunidad> queryOportunidades(DynamicQuery dynamicQuery) {
+		final Query queryNombre = new Query();
+		final List<Criteria> criteria = new ArrayList<>();
+		System.out.println(" moneda : " + dynamicQuery.getMoneda());
+		System.out.println(" monto : " + dynamicQuery.getMonto());
+		if(dynamicQuery.getMonto() > 0) {	
+			criteria.add(Criteria.where("email").regex(MongoRegexCreator.INSTANCE.toRegularExpression(
+					dynamicQuery.getLogin(), MatchMode.EXACT), "i"));
+		}
+
+		if(!criteria.isEmpty()) {
+			queryNombre.addCriteria(new Criteria().andOperator(criteria.toArray(new Criteria[criteria.size()])));
+		}
+		
+		return mongoTemplate.find(queryNombre, UserInversor.class);
+    }	
+}

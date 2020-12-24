@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">Confirming</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Login...</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="action_register">Registrarse...</string>
+
+    <string name="bienvenido_al_registro">Bienvenido al Registro</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="tituloRegistro">TextView</string>
+    <string name="tituloNombre">Nombre:</string>
+    <string name="tituloApellido">Apellido:</string>
+    <string name="tituloEmail">Email:</string>
+    <string name="editombre">Nombre</string>
+    <string name="editNombre">Nombre</string>
+    <string name="editApellido">Apellido</string>
+    <string name="editRegEmail">Email</string>
+    <string name="radioInversor">Inversor</string>
+    <string name="radioOfertante">Ofertante</string>
+    <string name="tituloContrasena">Contraseña:</string>
+    <string name="tituloContrasenaConf">Conf. Contraseña:</string>
+    <string name="tituloTipo_id">Tipo Id:</string>
+    <string name="tituloIdentificacion"># Identificación:</string>
+    <string name="editIdentificacion">Identificación</string>
+    <string name="tituloMoneda">Moneda</string>
+    <string name="tituloMonto">Monto</string>
+    <string name="tituloTelefono">Teléfono:</string>
+    <string name="editTelefono">Teléfono</string>
+
+    <string name="tituloNombreEmpresa">Empresa:</string>
+    <string name="tituloIdentificacionEmpresa"># Identificación:</string>
+    <string name="tituloTipoIdEmpresa">Identificación:</string>
+    <string name="tituloTelefonoContacto">Teléfono:</string>
+    <string name="buttonOportunidades">Oportunidades</string>
+    <string name="buttonMisInversiones">Mis Inversiones</string>
+    <string name="buttonMiCuenta">Mi Cuenta</string>
+
+
+    <string name="tituloDetalle">Detalle</string>
+    <string name="tituloNombreOfertante">Ofertante:</string>
+    <string name="tituloValor">Valor Factura:</string>
+
+    <string name="tituloFechaCobro">Fecha de Cobro:</string>
+    <string name="tituloPlazo">Plazo de Pago:</string>
+    <string name="tituloObservaciones">Detalle / Observaciones:</string>
+
+
+</resources>

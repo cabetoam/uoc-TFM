@@ -1,0 +1,12 @@
+package com.confirming.oportunidades.repository;
+
+import java.util.List;
+
+import com.confirming.api.model.User;
+import com.confirming.api.repository.DynamicQuery;
+
+public interface MongoTemplateRepository {
+	
+	List<User> queryOportunidades(DynamicQuery dynamicQuery); 
+	
+}

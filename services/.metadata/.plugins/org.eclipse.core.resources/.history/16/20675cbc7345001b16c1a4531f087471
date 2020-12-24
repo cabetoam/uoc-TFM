@@ -1,0 +1,5 @@
+package com.confirming.oportunidades.repository;
+
+public interface ArchivoRepository {
+
+}

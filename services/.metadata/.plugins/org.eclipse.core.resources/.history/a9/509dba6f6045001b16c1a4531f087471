@@ -1,0 +1,106 @@
+package com.confirming.oportunidades.resources;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.text.NumberFormat;
+import java.util.Locale;
+
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.confirming.oportunidades.model.Factura;
+import com.confirming.oportunidades.repository.FacturaRepository;
+import com.confirming.oportunidades.model.InsertResult;
+
+
+@RestController
+public class FacturaController {
+	
+	@Autowired
+	private FacturaRepository repository;
+	
+	@PostMapping("/addFactura")
+	public InsertResult saveFactura(@RequestBody Factura factura) {
+		
+		//NumberFormat numberFormat = NumberFormat.getInstance(Locale.US);
+		//System.out.println("Valor en Dolares : " + numberFormat.format(factura.getValor()));
+		
+		NumberFormat numberFormat = NumberFormat.getCurrencyInstance(Locale.US);
+		System.out.println("Valor en Dolares : " + numberFormat.format(factura.getValor()));
+		
+		factura.setId(ObjectId.get().toString());
+		InsertResult insertResult = new InsertResult();		
+		repository.save(factura);
+		insertResult.setInsertR("Ok");
+		insertResult.setError("no error");		
+		return insertResult;
+	}
+
+	
+	@PostMapping("/addArchivo")
+	public InsertResult saveArchivo(@RequestBody byte[] stream) {
+		
+		//NumberFormat numberFormat = NumberFormat.getInstance(Locale.US);
+		
+		System.out.println("streamSize : " + String.valueOf(stream.length));
+		System.out.println("stream Recibido : " + stream.toString());
+						
+		//factura.setId(ObjectId.get().toString());
+		InsertResult insertResult = new InsertResult();		
+		//repository.save(factura);
+		insertResult.setInsertR("Ok");
+		insertResult.setError("no error");		
+		return insertResult;
+	}
+	
+	
+	@PostMapping("/addArchivo2")
+	public InsertResult saveArchivo2(@RequestParam("file") MultipartFile file) throws IOException {
+		
+	   InsertResult insertResult = new InsertResult();		
+		
+	   if(file == null || file.isEmpty()) {
+			insertResult.setInsertR("Bad");
+			insertResult.setError("Error archivo vacio");		   
+	   } else {
+			StringBuilder builder = new StringBuilder();
+			builder.append(System.getProperty("user.home"));
+			builder.append(File.separator);
+			builder.append("spring_upload_example");
+			builder.append(File.separator);
+			builder.append(file.getOriginalFilename());
+			
+			System.out.println("FileName : " + file.getOriginalFilename());
+			
+			byte[] fileBytes = file.getBytes();
+			//Path path = Paths.get(builder.toString());
+			Path path = Paths.get("src//main//resources//static//images");
+			String rutaAbsoluta = path.toFile().getAbsolutePath();	
+			
+			Path pathCompleto = Paths.get(rutaAbsoluta + "//" + file.getOriginalFilename());
+			Files.write(pathCompleto, fileBytes);
+			
+			//System.out.println("streamSize : " + String.valueOf(stream.length));
+			//System.out.println("stream Recibido : " + stream.toString());							
+			//factura.setId(ObjectId.get().toString());
+			//repository.save(factura);
+			insertResult.setInsertR("Ok");
+			insertResult.setError("no error");
+		   
+	   }
+		
+		
+		return insertResult;
+	}
+	
+
+}
