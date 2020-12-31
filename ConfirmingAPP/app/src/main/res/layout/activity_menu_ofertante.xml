@@ -31,21 +31,27 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/buttonOportunidades"
+        android:id="@+id/btnPublicarFacturas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/buttonOportunidades" />
+        android:text="@string/btnPublicarFacturas"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
     <Button
-        android:id="@+id/buttonInversiones"
+        android:id="@+id/btnFacturasVendidas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/buttonMisInversiones" />
+        android:text="@string/btnFacturasVendidas"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/buttonMiCuenta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/buttonMiCuenta" />
+        android:text="@string/buttonMiCuenta"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
 </LinearLayout>

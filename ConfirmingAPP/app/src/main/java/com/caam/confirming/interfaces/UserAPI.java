@@ -10,7 +10,8 @@ import retrofit2.http.Query;
 
 public interface UserAPI {
 
-    @GET("validateUser2?")
+    //@GET("validateUser2?")
     //@GET("validateUser2?log=carlos@gmail.com&contrasena=carloncho")
+    @GET("validateUser?")
     public Call<UserReturn> find(@Query("log") String login, @Query("contrasena") String contrasena);
 }

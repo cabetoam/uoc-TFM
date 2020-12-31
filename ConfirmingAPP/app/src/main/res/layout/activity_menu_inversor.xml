@@ -34,18 +34,24 @@
         android:id="@+id/buttonOportunidades"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/buttonOportunidades" />
+        android:text="@string/buttonOportunidades"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
     <Button
-        android:id="@+id/buttonInversiones"
+        android:id="@+id/buttonMisInversiones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/buttonMisInversiones" />
+        android:text="@string/buttonMisInversiones"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/buttonMiCuenta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/buttonMiCuenta" />
+        android:text="@string/buttonMiCuenta"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
 </LinearLayout>

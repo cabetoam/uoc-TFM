@@ -80,6 +80,8 @@
         android:id="@+id/btnBuscarOportunidad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Buscar" />
+        android:text="Buscar"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
 </LinearLayout>

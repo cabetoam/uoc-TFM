@@ -29,21 +29,23 @@
     <string name="tituloContrasena">Contraseña:</string>
     <string name="tituloContrasenaConf">Conf. Contraseña:</string>
     <string name="tituloTipo_id">Tipo Id:</string>
-    <string name="tituloIdentificacion"># Identificación:</string>
+    <string name="tituloIdentificacion">Identificación:</string>
     <string name="editIdentificacion">Identificación</string>
-    <string name="tituloMoneda">Moneda</string>
-    <string name="tituloMonto">Monto</string>
+    <string name="tituloMoneda">Moneda:</string>
+    <string name="tituloMonto">Monto:</string>
     <string name="tituloTelefono">Teléfono:</string>
     <string name="editTelefono">Teléfono</string>
 
     <string name="tituloNombreEmpresa">Empresa:</string>
-    <string name="tituloIdentificacionEmpresa"># Identificación:</string>
+    <string name="tituloIdentificacionEmpresa">Tipo Id Empresa:</string>
     <string name="tituloTipoIdEmpresa">Identificación:</string>
     <string name="tituloTelefonoContacto">Teléfono:</string>
     <string name="buttonOportunidades">Oportunidades</string>
     <string name="buttonMisInversiones">Mis Inversiones</string>
     <string name="buttonMiCuenta">Mi Cuenta</string>
 
+    <string name="btnPublicarFacturas">Publicar Facturas</string>
+    <string name="btnFacturasVendidas">Facturas Vendidas</string>
 
     <string name="tituloDetalle">Detalle</string>
     <string name="tituloNombreOfertante">Ofertante:</string>
@@ -51,7 +53,10 @@
 
     <string name="tituloFechaCobro">Fecha de Cobro:</string>
     <string name="tituloPlazo">Plazo de Pago:</string>
-    <string name="tituloObservaciones">Detalle / Observaciones:</string>
+    <string name="tituloObservaciones">Comentarios / Observaciones:</string>
+    <string name="tituloValorVenta">Esta factura se vende por:</string>
+
+    <string name="tituloFechaCompra">Fecha de Compra:</string>
 
 
 </resources>

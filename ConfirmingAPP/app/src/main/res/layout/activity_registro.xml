@@ -5,6 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:onClick="checkButton"
     android:orientation="vertical"
     android:paddingLeft="16dp"
@@ -24,6 +25,8 @@
             android:gravity="center"
             android:text="@string/bienvenido_al_registro"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#000000"
+            android:textSize="20sp"
             android:textStyle="bold|italic" />
 
         <LinearLayout
@@ -33,7 +36,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="68dp"
+                android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -41,22 +44,31 @@
                     android:id="@+id/tituloNombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/tituloNombre" />
+                    android:layout_marginTop="10dp"
+                    android:text="@string/tituloNombre"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tituloApellido"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:text="@string/tituloApellido" />
+                    android:layout_marginTop="18dp"
+                    android:text="@string/tituloApellido"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tituloEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:text="@string/tituloEmail" />
+                    android:layout_marginTop="18dp"
+                    android:text="@string/tituloEmail"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -71,7 +83,9 @@
                     android:autofillHints=""
                     android:ems="10"
                     android:hint="@string/nombre"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/editApellido"
@@ -80,7 +94,9 @@
                     android:autofillHints=""
                     android:ems="10"
                     android:hint="@string/editApellido"
-                    android:inputType="textPersonName" />
+                    android:inputType="textPersonName"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/editRegEmailAddress"
@@ -89,7 +105,9 @@
                     android:ems="10"
                     android:hint="@string/editRegEmail"
                     android:importantForAutofill="no"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>
@@ -113,13 +131,15 @@
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:onClick="checkButton"
-                android:text="@string/radioInversor" />
+                android:text="@string/radioInversor"
+                android:textStyle="bold" />
 
             <RadioButton
                 android:id="@+id/radioOfertante"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/radioOfertante" />
+                android:text="@string/radioOfertante"
+                android:textStyle="bold" />
         </RadioGroup>
 
 
@@ -140,15 +160,21 @@
                 android:id="@+id/tituloContrasena"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:text="@string/tituloContrasena" />
+                android:layout_marginTop="10dp"
+                android:text="@string/tituloContrasena"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tituloContrasenaConf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:text="@string/tituloContrasenaConf" />
+                android:layout_marginTop="2dp"
+                android:text="@string/tituloContrasenaConf"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -162,7 +188,9 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Contraseña"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editContrasenaConf"
@@ -170,7 +198,9 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Contraseña"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>
@@ -180,6 +210,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Siguiente" />
+        android:text="Siguiente"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        app:iconTint="#FFFFFF" />
 
 </LinearLayout>

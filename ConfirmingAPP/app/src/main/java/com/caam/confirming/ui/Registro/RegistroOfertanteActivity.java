@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.caam.confirming.R;
@@ -39,8 +41,9 @@ public class RegistroOfertanteActivity extends AppCompatActivity {
 
         EditText editIdEmpresa = (EditText)findViewById(R.id.editIdEmpresa);
         EditText editNombreEmpresa = (EditText)findViewById(R.id.editNombreEmpresa);
-        EditText editTelefono = (EditText)findViewById(R.id.editTelefono);
+        EditText editTelefono = (EditText)findViewById(R.id.editTelefonoContacto);
 
+        TextView tituloNombreApellidoOfertante = (TextView)findViewById(R.id.tituloNombreApellidoOfertante);
 
         spinnerIdEmpresa = (Spinner)findViewById(R.id.spinnerIdEmpresa);
         String [] opcionesIdEmpresa = {"NIT", "Cedula de ciudadania", "Passaporte", "DNI"};
@@ -52,6 +55,8 @@ public class RegistroOfertanteActivity extends AppCompatActivity {
         ofertante.setApellido(datos.getString("apellido"));
         ofertante.setEmail(datos.getString("email"));
         ofertante.setContrasena(datos.getString("contrasena"));
+
+        tituloNombreApellidoOfertante.setText(datos.getString("nombre") + ": continua con el registro");
 
         Button finalizarRegistroEmpresa = (Button)findViewById(R.id.finalizarRegistroEmpresa);
         finalizarRegistroEmpresa.setOnClickListener(new View.OnClickListener() {
@@ -66,11 +71,18 @@ public class RegistroOfertanteActivity extends AppCompatActivity {
                 insertOfertante(ofertante);
             }
         });
+
+        LinearLayout contaniner = (LinearLayout)findViewById(R.id.container);
+        contaniner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
     }
 
 
     private void insertOfertante(Ofertante ofertante) {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.0.7:8080/")
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.1.101:6060/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
         OfertanteAPI ofertanteAPI = retrofit.create(OfertanteAPI.class);
         Call<InsertResult> call = ofertanteAPI.insertOfertanteService(ofertante);
@@ -116,6 +128,9 @@ public class RegistroOfertanteActivity extends AppCompatActivity {
         login.setContrasena(ofertante.getContrasena());
         login.setTipoUsuario("ofertante");
 
+        Retrofit retrofit2 = new Retrofit.Builder().baseUrl("http://192.168.1.101:5050/")
+                .addConverterFactory(GsonConverterFactory.create()).build();
+        ofertanteAPI = retrofit2.create(OfertanteAPI.class);
         Call<InsertResult> callServiceMQ = ofertanteAPI.insertLoginService(login, ofertante.getEmail());
         callServiceMQ.enqueue(new Callback<InsertResult>() {
             @Override

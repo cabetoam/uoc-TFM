@@ -1,0 +1,12 @@
+package com.confirming.reg.ofertante.repository;
+
+import java.util.List;
+
+import com.confirming.api.model.User;
+import com.confirming.api.repository.DynamicQuery;
+
+public interface MongoTemplateRepository {
+	
+	List<String> query(String username); 
+
+}

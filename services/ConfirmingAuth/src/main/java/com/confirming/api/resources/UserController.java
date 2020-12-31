@@ -30,7 +30,6 @@ public class UserController {
 	public String saveUser(@RequestBody User user) {
 		repository.save(user);
 		return "Added user with id : " + user.getId();
-
 	}
 
 	@GetMapping("/findAllUsers")

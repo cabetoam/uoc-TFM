@@ -4,6 +4,9 @@ import com.caam.confirming.models.InsertResult;
 import com.caam.confirming.models.Inversor;
 import com.caam.confirming.models.Login;
 import com.caam.confirming.models.Ofertante;
+import com.caam.confirming.models.Oportunidad;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -17,4 +20,9 @@ public interface OfertanteAPI {
 
     @POST("loginInsert/{email}")
     public Call<InsertResult> insertLoginService(@Body Login login, @Query("email") String email);
+
+    @POST("findOfertante")
+    public Call<List<Ofertante>> findOfertante(@Query("username") String username);
+
+
 }

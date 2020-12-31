@@ -32,7 +32,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="68dp"
+                android:layout_width="127dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -40,15 +40,31 @@
                     android:id="@+id/tituloNombreOfertante"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:text="@string/tituloNombreOfertante" />
+                    android:layout_marginTop="13dp"
+                    android:text="@string/tituloNombreOfertante"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tituloMoneda"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/tituloMoneda"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tituloValor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:text="@string/tituloValor" />
+                    android:layout_marginTop="8dp"
+                    android:text="@string/tituloValor"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -61,7 +77,16 @@
                     android:id="@+id/valorNombreOfertante"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp" />
+                    android:layout_marginTop="15dp"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="234dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp" />
 
                 <EditText
                     android:id="@+id/editMonto"
@@ -70,7 +95,10 @@
                     android:autofillHints=""
                     android:ems="10"
                     android:hint="$0.00"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -79,11 +107,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="15dp"
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="174dp"
+                android:layout_width="173dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -91,20 +119,34 @@
                     android:id="@+id/tituloFechaCobro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/tituloFechaCobro" />
+                    android:text="@string/tituloFechaCobro"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/editFechaCobro"
-                    android:layout_width="match_parent"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
+                    android:autofillHints=""
                     android:ems="10"
+                    android:hint="dia/mes/año"
                     android:inputType="date"
-                    android:autofillHints="" />
+                    android:textColor="#000000"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnSelectFecha"
+                    android:layout_width="149dp"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="198dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -112,33 +154,63 @@
                     android:id="@+id/tituloPlazo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/tituloPlazo" />
+                    android:text="@string/tituloPlazo"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/editPlazo"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
+                    android:hint="Plazo de Pago (dias)"
                     android:inputType="textPersonName"
-                    android:text="Plazo de pago" />
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/buttonSubirArchivo"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Subir Archivo" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tituloValorVenta"
+                android:layout_width="219dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tituloValorVenta"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editValorVenta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="$0.00"
+                android:inputType="textPersonName"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
 
         <TextView
             android:id="@+id/tituloObservaciones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:text="@string/tituloObservaciones"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#000000"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editDetalles"
@@ -146,15 +218,29 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="start|top"
+            android:hint="Comentarios / Observaciones"
             android:inputType="textMultiLine"
-            android:text="Detalles / Observaciones"/>
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <Button
-            android:id="@+id/buttonPublicarOferta"
+            android:id="@+id/btnPublicarOferta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Publicar Oferta" />
+            android:text="Publicar Oferta"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnSubirArchivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Tomar Foto Factura"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

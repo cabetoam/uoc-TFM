@@ -9,6 +9,8 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.MongoRegexCreator;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.MongoRegexCreator.MatchMode;
+
+import com.confirming.oportunidades.model.Factura;
 import com.confirming.oportunidades.model.Oportunidad;
 
 public class OportunidadesRepositoryImpl implements MongoTemplateRepository{
@@ -39,4 +41,20 @@ public class OportunidadesRepositoryImpl implements MongoTemplateRepository{
 		
 		return mongoTemplate.find(queryOportunidades, Oportunidad.class);
     }	
+	
+	@Override
+	public List<Factura> queryFindFactura(String id) {
+		final Query queryFindFactura = new Query();
+		final List<Criteria> criteria = new ArrayList<>();
+		System.out.println("id : " + id);
+		//if(dynamicQuery.getMonto() > 0) {	
+			criteria.add(Criteria.where("id").regex(MongoRegexCreator.INSTANCE.toRegularExpression(
+					id, MatchMode.EXACT), "i"));				
+		//}
+
+		if(!criteria.isEmpty()) {
+			queryFindFactura.addCriteria(new Criteria().andOperator(criteria.toArray(new Criteria[criteria.size()])));
+		}
+		return mongoTemplate.find(queryFindFactura, Factura.class);
+    }
 }

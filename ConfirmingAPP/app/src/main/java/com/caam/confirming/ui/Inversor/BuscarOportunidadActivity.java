@@ -51,18 +51,16 @@ public class BuscarOportunidadActivity extends AppCompatActivity {
         ArrayAdapter<String> adapterMoneda = new ArrayAdapter<String>( this, android.R.layout.simple_spinner_item, opcionesMoneda);
         spinner2.setAdapter(adapterMoneda);
 
-
-
         btnBuscarOportunidad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String moneda = spinner2.getSelectedItem().toString();
                 double monto = Double.parseDouble(editMonto.getText().toString());
                 findOportunidad(moneda, monto);
+
+
             }
         });
-
-
 
 
     }
@@ -71,7 +69,7 @@ public class BuscarOportunidadActivity extends AppCompatActivity {
     private void findOportunidad(String moneda, double monto) {
         //System.out.println("streamSize : " + String.valueOf(stream.size()));
        // System.out.println("imageSize in insertArchivo : " + image.toString());
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.0.8:8080/")
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.1.101:9090/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
         OportunidadAPI oportunidadAPI = retrofit.create(OportunidadAPI.class);
 
@@ -91,7 +89,7 @@ public class BuscarOportunidadActivity extends AppCompatActivity {
 
                             Intent intent = new Intent(BuscarOportunidadActivity.this, OportunidadesActivity.class);
                             //List<Oportunidad> list = new ArrayList<>();
-                            intent.putExtra("listaObjetos", (Serializable) responseService);
+                            intent.putExtra("listaOportunidades", (Serializable) responseService);
                             startActivity(intent);
                         } else {
                             Intent intent = new Intent(BuscarOportunidadActivity.this, LoginActivity.class);

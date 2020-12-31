@@ -13,7 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:text="Take Picture" />
+        android:text="Take Picture"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -28,6 +30,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
-        android:text="Publicar" />
+        android:text="Publicar"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
 
 </LinearLayout>

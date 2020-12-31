@@ -69,6 +69,8 @@ public class InversorController {
 		}*/
 		return insertResult;
 	}
+	
+	
 
 	@GetMapping("/findAllInversores")
 	public List<Inversor> getInversores() {
@@ -84,33 +86,5 @@ public class InversorController {
 	public String deleteInversor(@PathVariable int id) {
 		repository.deleteById(id);
 		return "inversor deleted with id : " + id;
-	}
-	
-/*	public static String peticionHttpGet(String urlParaVisitar) throws Exception {
-		String resultadoEnvio = "";
-		try {
-			// Esto es lo que vamos a devolver
-			StringBuilder resultado = new StringBuilder();
-			// Crear un objeto de tipo URL
-			URL url = new URL(urlParaVisitar);
-
-			// Abrir la conexión e indicar que será de tipo GET
-			HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
-			conexion.setRequestMethod("POST");			
-			// Búferes para leer
-			BufferedReader rd = new BufferedReader(new InputStreamReader(conexion.getInputStream()));
-			String linea;
-			// Mientras el BufferedReader se pueda leer, agregar contenido a resultado
-			while ((linea = rd.readLine()) != null) {
-				resultado.append(linea);
-			}
-			// Cerrar el BufferedReader
-			rd.close();
-			// Regresar resultado, pero como cadena, no como StringBuilder
-			resultadoEnvio = resultado.toString();
-		} catch (Exception e) {
-			resultadoEnvio = "Error...";
-		}
-		return resultadoEnvio;
-	}*/
+	}	
 }

@@ -9,6 +9,7 @@ import android.content.ContentUris;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -69,14 +70,17 @@ public class LoginActivity extends AppCompatActivity {
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
-        final Button buttonFoto = findViewById(R.id.buttonFoto);
-
         final EditText usernameEditText = findViewById(R.id.username);
         final EditText passwordEditText = findViewById(R.id.password);
         final Button loginButton = findViewById(R.id.login);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
         final Button register = findViewById(R.id.register);
         mensajeError = (TextView)findViewById(R.id.mensajeError);
+
+        register.setEnabled(true);
+
+        register.setBackgroundColor(0xFF00FF00);
+        register.setTextColor(Color.parseColor("#FFFFFF"));
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
@@ -152,11 +156,11 @@ public class LoginActivity extends AppCompatActivity {
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
 
-                find(usernameEditText.getText().toString(), passwordEditText.getText().toString() );
+                find(usernameEditText.getText().toString(), passwordEditText.getText().toString());
 
                 //Se colocan en este metodo para pruebas del diseño de las intertfaces
-                Intent intent = new Intent(LoginActivity.this, RegistroActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(LoginActivity.this, RegistroActivity.class);
+                //startActivity(intent);
 
             }
         });
@@ -164,19 +168,13 @@ public class LoginActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Intent intent = new Intent(LoginActivity.this, MenuOfertanteActivity.class);
+                //Intent intent = new Intent(LoginActivity.this, MenuInversorActivity.class);
                 Intent intent = new Intent(LoginActivity.this, RegistroActivity.class);
                 startActivity(intent);
             }
         });
 
-        buttonFoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Intent intent = new Intent(LoginActivity.this, TomarFotoActivity.class);
-                Intent intent = new Intent(LoginActivity.this, BuscarOportunidadActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     private void updateUiWithUser(LoggedInUserView model) {
@@ -192,10 +190,11 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void find(String username, String contrasena) {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.0.3:8080/")
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.1.101:8080/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
         UserAPI userAPI = retrofit.create(UserAPI.class);
         Call <UserReturn> call = userAPI.find(username, contrasena);
+        System.out.println("Datos enviados : " + username + " " + contrasena);
         call.enqueue(new Callback<UserReturn>() {
             @Override
             public void onResponse(Call<UserReturn> call, Response<UserReturn> response) {
@@ -207,16 +206,17 @@ public class LoginActivity extends AppCompatActivity {
                         String isUser = userReturn.getIsUser();
 
                         System.out.println((userReturn.getIsUser()));
-
                         Toast.makeText(getApplicationContext(), userReturn.getTipoUsuario(), Toast.LENGTH_LONG).show();
 
                         if(isUser.equals("true")) {
                             if(userReturn.getTipoUsuario().equals("inversor")) {
                                 Intent intent = new Intent(LoginActivity.this, MenuInversorActivity.class);
+                                intent.putExtra("username", username);
                                 startActivity(intent);
                             }
                             else if(userReturn.getTipoUsuario().equals("ofertante")){
                                 Intent intent = new Intent(LoginActivity.this, MenuOfertanteActivity.class);
+                                intent.putExtra("username", username);
                                 startActivity(intent);
                             }
                         }
@@ -235,6 +235,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<UserReturn> call, Throwable t) {
                 Toast.makeText( LoginActivity.this,  "No Response...", Toast.LENGTH_SHORT).show();
+                System.out.println(t.toString());
             }
         });
 

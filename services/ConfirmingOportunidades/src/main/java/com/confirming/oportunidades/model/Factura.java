@@ -19,11 +19,13 @@ public class Factura {
 	private String nombre;
 	private String moneda;
 	private double valor;
+	private double valorVenta;
 	private String fechaCobro;
-	private String Detalle;
 	private String plazoPago;
+	private String detalle;
 	private String status;
-
+	private String username;
+	private int idOfertante;
 	
 	public String getMoneda() {
 		return moneda;
@@ -56,10 +58,10 @@ public class Factura {
 		this.fechaCobro = fechaCobro;
 	}
 	public String getDetalle() {
-		return Detalle;
+		return detalle;
 	}
 	public void setDetalle(String detalle) {
-		Detalle = detalle;
+		this.detalle = detalle;
 	}
 	public String getPlazoPago() {
 		return plazoPago;
@@ -73,6 +75,23 @@ public class Factura {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public int getIdOfertante() {
+		return idOfertante;
+	}
+	public void setIdOfertante(int idOfertante) {
+		this.idOfertante = idOfertante;
+	}
+	public double getValorVenta() {
+		return valorVenta;
+	}
+	public void setValorVenta(double valorVenta) {
+		this.valorVenta = valorVenta;
+	}
 	
 }

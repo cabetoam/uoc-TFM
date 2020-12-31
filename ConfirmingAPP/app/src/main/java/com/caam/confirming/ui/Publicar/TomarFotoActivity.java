@@ -124,7 +124,7 @@ public class TomarFotoActivity extends AppCompatActivity {
     private void insertArchivo(ByteArrayOutputStream stream) {
         System.out.println("streamSize : " + String.valueOf(stream.size()));
         System.out.println("imageSize in insertArchivo : " + image.toString());
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.0.8:8080/")
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.1.101:8080/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
         ArchivoAPI archivoAPI = retrofit.create(ArchivoAPI.class);
 

@@ -9,28 +9,24 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.caam.confirming.R;
-import com.caam.confirming.interfaces.UserAPI;
 import com.caam.confirming.models.InsertResult;
 import com.caam.confirming.models.Inversor;
 import com.caam.confirming.interfaces.InversorAPI;
 import com.caam.confirming.models.Login;
-import com.caam.confirming.models.UserReturn;
 import com.caam.confirming.ui.Inversor.MenuInversorActivity;
-import com.caam.confirming.ui.Ofertante.MenuOfertanteActivity;
 import com.caam.confirming.ui.login.LoginActivity;
-
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Body;
 
 public class RegistroInversorActivity extends AppCompatActivity {
 
@@ -53,8 +49,10 @@ public class RegistroInversorActivity extends AppCompatActivity {
         EditText editMonto = (EditText)findViewById(R.id.editMonto);
         EditText editTelefono = (EditText)findViewById(R.id.editTelefono);
 
+        TextView tituloNombreApellido = (TextView)findViewById(R.id.tituloNombreApellido);
 
-        spinner1 = (Spinner)findViewById(R.id.spinner);
+
+        spinner1 = (Spinner)findViewById(R.id.spinner1);
         String [] opciones = {"Cedula de ciudadania", "Passaporte", "DNI"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>( this, android.R.layout.simple_spinner_item, opciones);
         spinner1.setAdapter(adapter);
@@ -70,6 +68,8 @@ public class RegistroInversorActivity extends AppCompatActivity {
         inversor.setEmail(datos.getString("email"));
         inversor.setContrasena(datos.getString("contrasena"));
 
+        tituloNombreApellido.setText(datos.getString("nombre") + ": continua con el registro");
+
         Button buttonFinalizarRegInversor = (Button)findViewById(R.id.buttonFinalizarRegInversor);
         buttonFinalizarRegInversor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,18 +84,18 @@ public class RegistroInversorActivity extends AppCompatActivity {
             }
         });
 
-
-      /*  System.out.println("nombre : " + nombre);
-        System.out.println("apellido : " + apellido);
-        System.out.println("email : " + email);
-        System.out.println("contrasena : " + contrasena);
-        System.out.println("tipoUsuario : " + tipoUsuario);*/
+        LinearLayout contaniner = (LinearLayout)findViewById(R.id.container);
+        contaniner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
 
     }
 
 
     private void insertInversor(Inversor inversor) {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.0.7:8080/")
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("http://192.168.1.101:5050/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
         InversorAPI inversorAPI = retrofit.create(InversorAPI.class);
         //Call<String> call = inversorAPI.insertInversorService(inversor.getId(), inversor.getNombre(), inversor.getApellido(), inversor.getEmail(), inversor.getContrasena(),

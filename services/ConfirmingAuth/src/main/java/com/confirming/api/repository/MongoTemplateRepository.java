@@ -6,7 +6,7 @@ import com.confirming.api.model.User;
 import com.confirming.api.model.UserInversor;
 import com.confirming.api.model.UserOfertante;
 
-	public interface MongoTemplateRepository {
+public interface MongoTemplateRepository {
 	
 		List<User> query(DynamicQuery dynamicQuery); 
 		

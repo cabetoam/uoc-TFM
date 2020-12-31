@@ -1,0 +1,5 @@
+package com.confirming.reg.ofertante.repository;
+
+public interface OfertanteRepository {
+
+}

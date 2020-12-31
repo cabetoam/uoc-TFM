@@ -15,7 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Confirming"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.Inversor.OportunidadesActivity"></activity>
+        <activity android:name=".ui.Ofertante.DetalleFacturaActivity"></activity>
+        <activity android:name=".ui.Ofertante.FacturasVendidasActivity" />
+        <activity android:name=".ui.Inversor.DetalleInversionActivity" />
+        <activity android:name=".ui.Inversor.InversionesActivity" />
+        <activity android:name=".ui.Inversor.OportunidadesActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

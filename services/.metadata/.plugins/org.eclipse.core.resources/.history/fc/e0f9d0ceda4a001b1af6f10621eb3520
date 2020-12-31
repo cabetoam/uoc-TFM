@@ -1,0 +1,10 @@
+package com.confirming.reg.ofertante.repository;
+
+import java.util.List;
+
+
+public interface MongoTemplateRepository {
+	
+	List<String> query(String username); 
+
+}

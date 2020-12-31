@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.amqp.core.Binding"/>
     <fullyQualifiedTypeName name="org.springframework.amqp.core.BindingBuilder"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
     <fullyQualifiedTypeName name="org.springframework.messaging.converter.MessageConverter"/>
@@ -39,7 +38,6 @@
     <fullyQualifiedTypeName name="org.springframework.data.mongodb.core.mapping.Document"/>
     <fullyQualifiedTypeName name="com.confirming.api.model.UserOfertante"/>
     <fullyQualifiedTypeName name="com.confirming.reg.inversor.model.InsertResult"/>
-    <fullyQualifiedTypeName name="com.confirming.oportunidades.model.Factura"/>
     <fullyQualifiedTypeName name="java.text.NumberFormat"/>
     <fullyQualifiedTypeName name="java.util.Locale"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
@@ -57,7 +55,9 @@
     <fullyQualifiedTypeName name="org.bson.types.ObjectId"/>
     <fullyQualifiedTypeName name="com.confirming.oportunidades.model.Archivo"/>
     <fullyQualifiedTypeName name="com.confirming.oportunidades.repository.ArchivoRepository"/>
-    <fullyQualifiedTypeName name="com.confirming.oportunidades.repository.OportunidadesRepository"/>
     <fullyQualifiedTypeName name="com.confirming.oportunidades.model.Oportunidad"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.confirming.oportunidades.repository.OportunidadesRepository"/>
+    <fullyQualifiedTypeName name="com.confirming.oportunidades.model.Factura"/>
+    <fullyQualifiedTypeName name="com.confirming.reg.ofertante.model.Ofertante"/>
 </qualifiedTypeNameHistroy>
