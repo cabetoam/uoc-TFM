@@ -17,24 +17,30 @@ import com.caam.confirming.ui.Inversor.DetalleOportunidadActivity;
 import com.caam.confirming.ui.Inversor.OportunidadesActivity;
 
 import java.io.Serializable;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class FacturasVendidasActivity extends AppCompatActivity {
-
+    String username;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facturas_vendidas);
 
+        username = getIntent().getStringExtra("username");
+
         ArrayList<String> listaToShow = new ArrayList<String>();
         ListView idListaFacturas = (ListView)findViewById(R.id.idListaFacturas);
 
-        List<Factura> lista = (List<Factura>)getIntent().getSerializableExtra("listaObjetos");
+        List<Factura> lista = (List<Factura>)getIntent().getSerializableExtra("listaFacturasVendidas");
         System.out.println("lista : " + lista.get(0).getId());
 
         for (int i = 0; i < lista.size(); i++) {
-            listaToShow.add("Valor: " + lista.get(i).getValor() + "\n" + "Plazo: " + lista.get(i).getPlazoPago() + "\n");
+            listaToShow.add("Valor Factura: " + formatearDouble(lista.get(i).getValor()) + " " + lista.get(i).getMoneda() + "\n" +
+                    "Vendida en: " + formatearDouble(lista.get(i).getValorVenta()) + " " + lista.get(i).getMoneda() +  "\n");
         }
 
         ArrayAdapter adapter = new ArrayAdapter(this,  android.R.layout.simple_selectable_list_item, listaToShow);
@@ -52,18 +58,26 @@ public class FacturasVendidasActivity extends AppCompatActivity {
                 System.out.println(lista.get(i).getStatus());
 
                 Intent intent = new Intent(FacturasVendidasActivity.this, DetalleFacturaActivity.class);
+                intent.putExtra("username", username);
                 intent.putExtra("nombre", lista.get(i).getNombre());
                 intent.putExtra("moneda", lista.get(i).getMoneda());
                 intent.putExtra("valor", lista.get(i).getValor());
+                intent.putExtra("valorVenta", lista.get(i).getValorVenta());
                 intent.putExtra("fechaCobro", lista.get(i).getFechaCobro());
                 intent.putExtra("plazo", lista.get(i).getPlazoPago());
+                intent.putExtra("detalle", lista.get(i).getDetalle());
                 intent.putExtra("status", lista.get(i).getStatus());
-                intent.putExtra("listaObjetos", (Serializable) lista);
+                intent.putExtra("listaFacturasVendidas", (Serializable) lista);
                 startActivity(intent);
 
                 Toast.makeText(adapterView.getContext(), "Selecciona: " + adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
+    }
+
+    private String formatearDouble(double valor) {
+        NumberFormat formato = NumberFormat.getCurrencyInstance(Locale.US);
+        return formato.format(valor);
     }
 }

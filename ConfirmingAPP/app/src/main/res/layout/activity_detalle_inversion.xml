@@ -32,7 +32,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="68dp"
+                android:layout_width="114dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
@@ -41,14 +41,42 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:text="@string/tituloNombreOfertante" />
+                    android:text="@string/tituloNombreOfertante"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/tituloValor"
+                    android:id="@+id/tituloMoneda"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@string/tituloValor" />
+                    android:text="@string/tituloMoneda"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/tituloValorCompra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/tituloValorCompra"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tituloGanancia"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/tituloGanancia"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
 
             </LinearLayout>
 
@@ -61,13 +89,36 @@
                     android:id="@+id/valueNombreOfertante"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp" />
+                    android:layout_marginTop="17dp"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/valueValorFactura"
+                    android:id="@+id/valueMoneda"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp" />
+                    android:layout_marginTop="10dp"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/valueValorInvertido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:textColor="#0288D1"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/valueGanancia"
+                    android:layout_width="156dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text=""
+                    android:textColor="#D32F2F"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -88,12 +139,17 @@
                     android:id="@+id/tituloFechaCompra"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/tituloFechaCompra" />
+                    android:text="@string/tituloFechaCompra"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/valueFechaCobro"
+                    android:id="@+id/valueFechaCompra"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -106,29 +162,21 @@
                     android:id="@+id/tituloPlazo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/tituloPlazo" />
+                    android:text="@string/tituloPlazo"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/valuePlazo"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/tituloObservaciones"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/tituloObservaciones"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-        <TextView
-            android:id="@+id/valueDetalles"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -145,13 +193,6 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
                 app:iconTint="#FFFFFF" />
-
         </LinearLayout>
-
-
     </LinearLayout>
-
-
-
-
 </LinearLayout>

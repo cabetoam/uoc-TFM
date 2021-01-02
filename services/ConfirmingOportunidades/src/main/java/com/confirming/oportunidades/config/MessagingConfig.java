@@ -14,9 +14,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class MessagingConfig {
 	
-	public static final String QUEUE = "insertInversion_queue";
-	public static final String EXCHANGE = "insertInversion_exchange";
-	public static final String ROUTINGKEY = "insertInversion_routingKey";
+	public static final String QUEUE = "updateFactura_queue";
+	public static final String EXCHANGE = "updateFactura_exchange";
+	public static final String ROUTINGKEY = "updateFactura_routingKey";
 	
 	@Bean
 	public Queue queue() {

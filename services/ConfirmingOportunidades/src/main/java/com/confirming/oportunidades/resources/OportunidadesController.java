@@ -1,19 +1,19 @@
 package com.confirming.oportunidades.resources;
 
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.confirming.oportunidades.repository.DynamicQuery;
+
 import com.confirming.oportunidades.model.Oportunidad;
 import com.confirming.oportunidades.repository.OportunidadesRepository;
 
@@ -24,9 +24,7 @@ public class OportunidadesController {
 	@Autowired
 	private OportunidadesRepository oportunidadesRepository;
 	
-	//private  oportunidadesRepository;
-	
-	
+
 	@PostMapping(path="/findOportunidades", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Oportunidad> findOportunidades(@RequestParam("moneda") String moneda, @RequestParam("monto") double monto) {
 		List<Oportunidad> oportunidad = new ArrayList<Oportunidad>();
@@ -42,8 +40,7 @@ public class OportunidadesController {
 		oportunidad = oportunidadesRepository.queryOportunidades(dynamicQuery);
 		System.out.println(" monto : " + oportunidad.get(0).getPlazoPago());
 		System.out.println(" monto2 : " + oportunidad.size());
-		return oportunidad;
-		
-		//return oportunidad;
+		return oportunidad;		
 	}
+	
 }

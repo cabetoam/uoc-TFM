@@ -1,6 +1,8 @@
 package com.caam.confirming.models;
 
-public class Factura {
+import java.io.Serializable;
+
+public class Factura implements Serializable {
 
     private String id;
     private String nombre;

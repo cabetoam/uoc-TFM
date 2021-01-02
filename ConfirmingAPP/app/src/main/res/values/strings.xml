@@ -1,15 +1,15 @@
 <resources>
-    <string name="app_name">Confirming</string>
+    <string name="app_name">Confirming For All</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Login...</string>
+    <string name="action_sign_in">Login</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <string name="action_register">Registrarse...</string>
+    <string name="action_register">Registrarse</string>
 
     <string name="bienvenido_al_registro">Bienvenido al Registro</string>
     <string name="nombre">Nombre</string>
@@ -57,6 +57,30 @@
     <string name="tituloValorVenta">Esta factura se vende por:</string>
 
     <string name="tituloFechaCompra">Fecha de Compra:</string>
+    <string name="tituloValorCompra">Valor Invertido:</string>
+    <string name="tituloGanancia">Ganancia:</string>
+
+    <string name="tituloCuentaInv">Resumen de Mi Cuenta</string>
+
+    <string name="tituloTotalFacturasCompradas">Total Facturas Compradas:</string>
+    <string name="tituloTotalInvertidoCOP">Total de Inversiones en COP:</string>
+    <string name="tituloTotalInvertidoUSD">Total de Inversiones en USD:</string>
+    <string name="tituloTotalInvertidoEUR">Total de Inversiones en EUR:</string>
+
+    <string name="tituloTotalGananciaCOP">Total Ganancia en COP:</string>
+    <string name="tituloTotalGananciaUSD">Total Ganancia en USD:</string>
+    <string name="tituloTotalGananciaEUR">Total Ganancia en EUR:</string>
+
+    <string name="tituloCuentaOfer">Resumen de Mi Cuenta</string>
+
+    <string name="tituloTotalFacturasVendidas">Total Facturas Vendidas:</string>
+    <string name="tituloTotalFacturasCOP">Total Facturas en COP:</string>
+    <string name="tituloTotalFacturasUSD">Total Facturas en USD:</string>
+    <string name="tituloTotalFacturasEUR">Total Facturas en EUR:</string>
+
+    <string name="tituloTotalRecaudoCOP">Total Recaudado en COP:</string>
+    <string name="tituloTotalRecaudoUSD">Total Recaudado en USD:</string>
+    <string name="tituloTotalRecaudoEUR">Total Recaudado en EUR:</string>
 
 
 </resources>

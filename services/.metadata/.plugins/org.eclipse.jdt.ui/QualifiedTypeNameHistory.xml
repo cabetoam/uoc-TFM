@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.amqp.core.BindingBuilder"/>
-    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
-    <fullyQualifiedTypeName name="org.springframework.messaging.converter.MessageConverter"/>
-    <fullyQualifiedTypeName name="org.springframework.amqp.rabbit.connection.ConnectionFactory"/>
-    <fullyQualifiedTypeName name="org.springframework.amqp.support.converter.Jackson2JsonMessageConverter"/>
-    <fullyQualifiedTypeName name="org.springframework.amqp.core.AmqpTemplate"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
     <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
@@ -42,7 +36,6 @@
     <fullyQualifiedTypeName name="java.util.Locale"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="org.springframework.data.mongodb.repository.MongoRepository"/>
-    <fullyQualifiedTypeName name="com.confirming.oportunidades.model.Inversion"/>
     <fullyQualifiedTypeName name="com.confirming.oportunidades.dto.InversionStatus"/>
     <fullyQualifiedTypeName name="com.confirming.oportunidades.config.MessagingConfig"/>
     <fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
@@ -58,6 +51,13 @@
     <fullyQualifiedTypeName name="com.confirming.oportunidades.model.Oportunidad"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.confirming.oportunidades.repository.OportunidadesRepository"/>
-    <fullyQualifiedTypeName name="com.confirming.oportunidades.model.Factura"/>
     <fullyQualifiedTypeName name="com.confirming.reg.ofertante.model.Ofertante"/>
+    <fullyQualifiedTypeName name="com.confirming.oportunidades.repository.InversionRepository"/>
+    <fullyQualifiedTypeName name="com.confirming.oportunidades.model.Factura"/>
+    <fullyQualifiedTypeName name="org.springframework.data.mongodb.core.query.Update"/>
+    <fullyQualifiedTypeName name="com.confirming.oportunidades.repository.OportunidadesRepositoryImpl"/>
+    <fullyQualifiedTypeName name="com.confirming.oportunidades.dto.FacturaStatus"/>
+    <fullyQualifiedTypeName name="com.confirming.oportunidades.model.IdFactura"/>
+    <fullyQualifiedTypeName name="com.confirming.oportunidades.model.Inversion"/>
+    <fullyQualifiedTypeName name="com.confirming.oportunidades.repository.InversionesRepository"/>
 </qualifiedTypeNameHistroy>

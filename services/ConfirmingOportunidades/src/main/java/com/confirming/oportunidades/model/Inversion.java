@@ -1,6 +1,5 @@
 package com.confirming.oportunidades.model;
 
-import java.util.Date;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,10 +17,37 @@ public class Inversion {
 	private String id;
 	private String nombreOfertante;
 	private String moneda;
-	private double valor;
-	private Date fechaCompra;
-	private String emailComprador;
+	private double valorCompra;
+	private double ganancia;
+	private String plazoPago;
+	private String fechaCompra;
+	private String usernameComprador;
+	private String idFactura;
 	
+	public double getValorCompra() {
+		return valorCompra;
+	}
+	public void setValorCompra(double valorCompra) {
+		this.valorCompra = valorCompra;
+	}
+	public double getGanancia() {
+		return ganancia;
+	}
+	public void setGanancia(double ganancia) {
+		this.ganancia = ganancia;
+	}
+	public String getPlazoPago() {
+		return plazoPago;
+	}
+	public void setPlazoPago(String plazoPago) {
+		this.plazoPago = plazoPago;
+	}
+	public String getIdFactura() {
+		return idFactura;
+	}
+	public void setIdFactura(String idFactura) {
+		this.idFactura = idFactura;
+	}
 	public String getId() {
 		return id;
 	}
@@ -40,23 +66,17 @@ public class Inversion {
 	public void setMoneda(String moneda) {
 		this.moneda = moneda;
 	}
-	public double getValor() {
-		return valor;
-	}
-	public void setValor(double valor) {
-		this.valor = valor;
-	}
-	public Date getFechaCompra() {
+	public String getFechaCompra() {
 		return fechaCompra;
 	}
-	public void setFechaCompra(Date fechaCompra) {
+	public void setFechaCompra(String fechaCompra) {
 		this.fechaCompra = fechaCompra;
 	}
-	public String getEmailComprador() {
-		return emailComprador;
+	public String getUsernameComprador() {
+		return usernameComprador;
 	}
-	public void setEmailComprador(String emailComprador) {
-		this.emailComprador = emailComprador;
+	public void setUsernameComprador(String usernameComprador) {
+		this.usernameComprador = usernameComprador;
 	}
 
 }

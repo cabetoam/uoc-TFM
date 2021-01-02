@@ -1,14 +1,18 @@
 package com.caam.confirming.models;
 
-public class Inversion {
+import java.io.Serializable;
+
+public class Inversion implements Serializable {
 
     private String id;
-    private String email;
-    private String ofertante;
+    private String nombreOfertante;
     private String moneda;
-    private double valor;
-    private String fechaCompra;
+    private double valorCompra;
+    private double ganancia;
     private String plazoPago;
+    private String fechaCompra;
+    private String usernameComprador;
+    private String idFactura;
 
     public String getId() {
         return id;
@@ -18,20 +22,12 @@ public class Inversion {
         this.id = id;
     }
 
-    public String getEmail() {
-        return email;
+    public String getNombreOfertante() {
+        return nombreOfertante;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getOfertante() {
-        return ofertante;
-    }
-
-    public void setOfertante(String ofertante) {
-        this.ofertante = ofertante;
+    public void setNombreOfertante(String nombreOfertante) {
+        this.nombreOfertante = nombreOfertante;
     }
 
     public String getMoneda() {
@@ -42,12 +38,28 @@ public class Inversion {
         this.moneda = moneda;
     }
 
-    public double getValor() {
-        return valor;
+    public double getValorCompra() {
+        return valorCompra;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
+    public void setValorCompra(double valorCompra) {
+        this.valorCompra = valorCompra;
+    }
+
+    public double getGanancia() {
+        return ganancia;
+    }
+
+    public void setGanancia(double ganancia) {
+        this.ganancia = ganancia;
+    }
+
+    public String getPlazoPago() {
+        return plazoPago;
+    }
+
+    public void setPlazoPago(String plazoPago) {
+        this.plazoPago = plazoPago;
     }
 
     public String getFechaCompra() {
@@ -58,11 +70,19 @@ public class Inversion {
         this.fechaCompra = fechaCompra;
     }
 
-    public String getPlazoPago() {
-        return plazoPago;
+    public String getUsernameComprador() {
+        return usernameComprador;
     }
 
-    public void setPlazoPago(String plazo) {
-        this.plazoPago = plazo;
+    public void setUsernameComprador(String usernameComprador) {
+        this.usernameComprador = usernameComprador;
+    }
+
+    public String getIdFactura() {
+        return idFactura;
+    }
+
+    public void setIdFactura(String idFactura) {
+        this.idFactura = idFactura;
     }
 }

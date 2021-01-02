@@ -10,4 +10,8 @@ public interface MongoTemplateRepository {
 	List<Oportunidad> queryOportunidades(DynamicQuery dynamicQuery); 
 	
 	List<Factura> queryFindFactura(String id);
+	
+	String queryUpdateStatusFactura(String id);
+	
+	List<Factura> queryFacturasVendidas(String username);
 }

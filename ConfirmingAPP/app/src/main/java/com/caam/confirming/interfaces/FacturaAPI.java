@@ -19,4 +19,7 @@ public interface FacturaAPI {
 
     @POST("addFactura")
     public Call<InsertResult> insertFacturaService(@Body Factura factura);
+
+    @POST("findFacturasVendidas")
+    public Call<List<Factura>> findFacturasVendidasService(@Query("username") String username);
 }

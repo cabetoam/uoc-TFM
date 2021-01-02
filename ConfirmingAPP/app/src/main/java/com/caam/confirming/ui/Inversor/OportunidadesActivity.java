@@ -32,11 +32,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class OportunidadesActivity extends AppCompatActivity {
 
+    String usernameSesion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_oportunidades);
+
+        usernameSesion = getIntent().getStringExtra("username");
 
         ArrayList<String> listaToShow = new ArrayList<String>();
         ListView idListaInversiones = (ListView)findViewById(R.id.idListaInversiones);
@@ -73,6 +76,7 @@ public class OportunidadesActivity extends AppCompatActivity {
                 intent.putExtra("status", lista.get(i).getStatus());
                 intent.putExtra("username", lista.get(i).getUsername());
                 intent.putExtra("idOfertante", lista.get(i).getIdOfertante());
+                intent.putExtra("usernameSesion", usernameSesion);
 
                 intent.putExtra("listaOportunidades", (Serializable) lista);
                 startActivity(intent);

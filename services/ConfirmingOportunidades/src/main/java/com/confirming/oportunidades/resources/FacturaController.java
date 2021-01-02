@@ -121,7 +121,19 @@ public class FacturaController {
 	}
 	
 	
-	@PostMapping(path="/findFactura", produces = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path="/findFacturasVendidas", produces = MediaType.APPLICATION_JSON_VALUE)
+	public List<Factura> findFacturasVendidas(@RequestParam("username") String username) {
+		List<Factura> factura = new ArrayList<Factura>();
+
+		System.out.println(" username : " + username);
+		
+		factura =  oportunidadRepository.queryFacturasVendidas(username);
+		System.out.println(" nombre : " + factura.get(0).getNombre());
+
+		return factura;		
+	}
+	
+/*	@PostMapping(path="/findFactura", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Factura> findFactura(@RequestParam("id") String id) {
 		List<Factura> factura = new ArrayList<Factura>();
 
@@ -130,10 +142,10 @@ public class FacturaController {
 		factura =  oportunidadRepository.queryFindFactura(id);
 		System.out.println(" nombre : " + factura.get(0).getNombre());
 
-		return factura;
-		
-		//return oportunidad;
-	}
+		return factura;		
+	}*/
+	
+	
 
 
 }

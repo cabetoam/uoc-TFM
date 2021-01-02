@@ -1,0 +1,73 @@
+package com.confirming.oportunidades.repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.MongoRegexCreator;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.data.mongodb.core.query.MongoRegexCreator.MatchMode;
+
+import com.confirming.oportunidades.model.Factura;
+import com.confirming.oportunidades.model.Oportunidad;
+
+public class OportunidadesRepositoryImpl implements MongoTemplateRepository{
+	
+	private final MongoTemplate mongoTemplate;
+	
+	@Autowired
+	public OportunidadesRepositoryImpl(MongoTemplate mongoTemplate) {
+		this.mongoTemplate = mongoTemplate;
+	}
+
+	
+	@Override
+	public List<Oportunidad> queryOportunidades(DynamicQuery dynamicQuery) {
+		final Query queryOportunidades = new Query();
+		final List<Criteria> criteria = new ArrayList<>();
+		System.out.println("moneda : " + dynamicQuery.getMoneda());
+		System.out.println("monto : " + dynamicQuery.getMonto());
+		//if(dynamicQuery.getMonto() > 0) {	
+			criteria.add(Criteria.where("moneda").regex(MongoRegexCreator.INSTANCE.toRegularExpression(
+					dynamicQuery.getMoneda(), MatchMode.CONTAINING), "i"));
+			criteria.add(Criteria.where("valor").lte(dynamicQuery.getMonto()));						
+		//}
+
+		if(!criteria.isEmpty()) {
+			queryOportunidades.addCriteria(new Criteria().andOperator(criteria.toArray(new Criteria[criteria.size()])));
+		}
+		
+		return mongoTemplate.find(queryOportunidades, Oportunidad.class);
+    }	
+	
+	@Override
+	public List<Factura> queryFindFactura(String id) {
+		final Query queryFindFactura = new Query();
+		final List<Criteria> criteria = new ArrayList<>();
+		System.out.println("id : " + id);
+		//if(dynamicQuery.getMonto() > 0) {	
+			criteria.add(Criteria.where("id").regex(MongoRegexCreator.INSTANCE.toRegularExpression(
+					id, MatchMode.EXACT), "i"));				
+		//}
+
+		if(!criteria.isEmpty()) {
+			queryFindFactura.addCriteria(new Criteria().andOperator(criteria.toArray(new Criteria[criteria.size()])));
+		}
+		return mongoTemplate.find(queryFindFactura, Factura.class);
+    }
+	
+	@Override
+	public String queryUpdateStatusFactura(String id) {
+		String updateResult = "";
+		System.out.println("id : " + id);
+		Query queryUpdateStatusFactura = new Query(Criteria.where("_id").is(id));
+		Update update = Update.update("status", "disponible").set("status", "vendida");
+		mongoTemplate.findAndModify(queryUpdateStatusFactura, update, Factura.class);
+		updateResult = "Ok";
+		return updateResult;
+    }
+	
+}

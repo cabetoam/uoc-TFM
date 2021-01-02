@@ -39,7 +39,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/buttonMisInversiones"
+        android:id="@+id/btnMisInversiones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/buttonMisInversiones"
@@ -47,7 +47,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/buttonMiCuenta"
+        android:id="@+id/btnMiCuentaOfer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/buttonMiCuenta"

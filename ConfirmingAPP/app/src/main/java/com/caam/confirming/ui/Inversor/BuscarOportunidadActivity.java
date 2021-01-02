@@ -36,13 +36,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BuscarOportunidadActivity extends AppCompatActivity {
 
-
+    String username;
     Spinner spinner2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buscar_oportunidad);
+
+        username = getIntent().getStringExtra("username");
 
         EditText editMonto = (EditText)findViewById(R.id.editMonto);
         Button btnBuscarOportunidad = (Button)findViewById(R.id.btnBuscarOportunidad);
@@ -57,8 +59,6 @@ public class BuscarOportunidadActivity extends AppCompatActivity {
                 String moneda = spinner2.getSelectedItem().toString();
                 double monto = Double.parseDouble(editMonto.getText().toString());
                 findOportunidad(moneda, monto);
-
-
             }
         });
 
@@ -89,6 +89,7 @@ public class BuscarOportunidadActivity extends AppCompatActivity {
 
                             Intent intent = new Intent(BuscarOportunidadActivity.this, OportunidadesActivity.class);
                             //List<Oportunidad> list = new ArrayList<>();
+                            intent.putExtra("username", username);
                             intent.putExtra("listaOportunidades", (Serializable) responseService);
                             startActivity(intent);
                         } else {
